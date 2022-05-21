@@ -1,0 +1,32 @@
+version: '3.9'
+
+
+services:
+  backend:
+    build: petsgram-be/.
+    restart: always
+    ports:
+      - 5001:5000
+    env_file:
+      - .env
+    depends_on:
+      - db
+  frontend:
+    build: petsgram-fe/.
+    restart: always
+    ports:
+      - 5002:5000
+    env_file:
+      - .env
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5434:5432
+    volumes:
+      - petsdb:/var/lib/postgresql
+volumes:
+  petsdb:
+

@@ -1,0 +1,6 @@
+[submodule "petsgram-fe"]
+	path = petsgram-fe
+	url = https://github.com/kkawalski/petsgram-fe.git
+[submodule "petsgram-be"]
+	path = petsgram-be
+	url = https://github.com/kkawalski/petsgram-be.git
